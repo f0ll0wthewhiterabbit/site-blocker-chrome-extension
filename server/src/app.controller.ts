@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Post } from '@nestjs/common';
 import { ApiOkResponse, ApiProperty } from '@nestjs/swagger';
 import { AppService } from './app.service';
 import { DbService } from './db/db.service';
@@ -15,7 +15,7 @@ export class AppController {
     private readonly dbService: DbService,
   ) {}
 
-  @Get()
+  @Post()
   @ApiOkResponse({ type: HelloWorldDto })
   async getHello(): Promise<HelloWorldDto> {
     // FIXME:
