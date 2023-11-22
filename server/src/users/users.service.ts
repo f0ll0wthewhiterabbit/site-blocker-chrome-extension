@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { AccountService } from 'src/account/account.service';
+import { BlockListService } from 'src/block-list/block-list.service';
 import { DbService } from 'src/db/db.service';
 
 @Injectable()
@@ -7,6 +8,7 @@ export class UsersService {
   constructor(
     private readonly dbService: DbService,
     private readonly accountService: AccountService,
+    private readonly blockListService: BlockListService,
   ) {}
 
   findByEmail(email: string) {
@@ -18,6 +20,7 @@ export class UsersService {
       data: { email, hash, salt },
     });
     await this.accountService.create(user.id);
+    await this.blockListService.create(user.id);
 
     return user;
   }
