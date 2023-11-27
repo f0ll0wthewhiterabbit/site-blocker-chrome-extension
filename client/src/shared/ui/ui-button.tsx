@@ -20,7 +20,7 @@ export function UiButton({ className, variant, ...props }: UiButtonProps) {
           secondary:
             'text-white bg-rose-500 hover:bg-rose-600 focus-visible:bg-rose-600 disabled:bg-rose-300 shadow shadow-rose-500/30',
           outlined:
-            'border border-slate-300 enabled:hover:bg-slate-200 enabled:focus-visible:bg-slate-200 disabled:border-slate-100 disabled:text-slate-400',
+            'border border-slate-300 enabled:hover:border-slate-500 enabled:focus-visible:bg-slate-200 disabled:border-slate-100 disabled:text-slate-400',
         }[variant],
       )}
     />
