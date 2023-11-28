@@ -5,7 +5,7 @@ import { UiLink } from '@/shared/ui/ui-link';
 import { UiSpinner } from '@/shared/ui/ui-spinner';
 import { UiPageSpinner } from '@/shared/ui/ui-page-spinner';
 import { UiHeader } from '@/shared/ui/ui-header';
-import { SignOutButton } from '@/features';
+import { SignOutButton } from '@/features/auth';
 import { useSessionQuery } from '@/entities';
 
 export function HomePage() {
