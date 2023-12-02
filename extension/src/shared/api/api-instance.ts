@@ -21,6 +21,7 @@ export const createInstance = async <T>({
 }): Promise<T> => {
   const response = await fetch(`${baseURL}${url}` + new URLSearchParams(params), {
     method: method.toUpperCase(),
+    credentials: 'include',
     ...(data ? { body: JSON.stringify(data) } : {}),
   });
 
@@ -32,4 +33,5 @@ export const createInstance = async <T>({
 };
 
 export type BodyType<BodyData> = BodyData;
+
 export type ErrorType<Error> = Error;
