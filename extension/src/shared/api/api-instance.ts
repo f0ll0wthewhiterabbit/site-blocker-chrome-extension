@@ -10,6 +10,7 @@ export const createInstance = async <T>({
   url,
   method,
   params,
+  headers,
   data,
 }: {
   url: string;
@@ -22,6 +23,7 @@ export const createInstance = async <T>({
   const response = await fetch(`${baseURL}${url}` + new URLSearchParams(params), {
     method: method.toUpperCase(),
     credentials: 'include',
+    headers,
     ...(data ? { body: JSON.stringify(data) } : {}),
   });
 
