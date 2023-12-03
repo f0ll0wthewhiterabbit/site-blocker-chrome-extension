@@ -38,3 +38,12 @@ export const addInstallListener = (cb: () => Awaited<void>) => {
     await cb();
   });
 };
+
+let currentIcon = '';
+
+export const setIcon = (url: string) => {
+  if (url !== currentIcon) {
+    currentIcon = url;
+    chrome.action.setIcon({ path: chrome.runtime.getURL(url) });
+  }
+};
